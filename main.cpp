@@ -5,6 +5,8 @@
 #include <QTranslator>
 #include <QDebug>
 
+#include "batterystatustablemodel.h"
+
 int main(int argc, char *argv[])
 {
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
@@ -12,9 +14,11 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QApplication app(argc, argv);
-//    QTranslator tr;
-//    tr.load(QStringLiteral("qrc:/TSMS_zh_CN.qm"));
-//    app.installTranslator(&tr);
+    QTranslator tr;
+    tr.load(QStringLiteral("qrc:/TSMS_zh_CN.qm"));
+    app.installTranslator(&tr);
+    qmlRegisterType<BatteryStatusTableModel>("BatteryStatusTableModel", 1, 0, "BatteryStatusTableModel");
+
 
 //    QQmlApplicationEngine engine;
 

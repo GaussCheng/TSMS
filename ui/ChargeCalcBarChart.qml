@@ -68,7 +68,7 @@ ChartView{
         BarSet{
             id:triBar
             label: qsTr("Discharge")
-            values: [0, -50, -40, -30,60]
+            values: [0, -50, -40, -30,-60]
             color: "#E9681B"
         }
     }

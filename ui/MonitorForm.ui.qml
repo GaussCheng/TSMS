@@ -309,8 +309,6 @@ Rectangle {
                 anchors.leftMargin: 0
                 styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
-                padding: 0
-                renderType: Text.QtRendering
                 background: Rectangle {
                     color: "#194584"
                 }
@@ -328,8 +326,6 @@ Rectangle {
                 anchors.leftMargin: 0
                 styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
-                padding: 0
-                renderType: Text.QtRendering
                 background: Rectangle {
                     color: "#194584"
                 }
@@ -347,8 +343,6 @@ Rectangle {
                 anchors.leftMargin: 0
                 styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
-                padding: 0
-                renderType: Text.QtRendering
                 background: Rectangle {
                     color: "#194584"
                 }
@@ -386,8 +380,6 @@ Rectangle {
                 text: qsTr("25°C")
                 anchors.left: label2.right
                 anchors.leftMargin: 0
-                padding: 0
-                renderType: Text.QtRendering
                 horizontalAlignment: Text.AlignRight
                 styleColor: "#194584"
                 background: Rectangle {

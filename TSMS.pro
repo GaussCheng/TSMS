@@ -5,6 +5,7 @@ CONFIG += c++11
 RCC_DIR = temp
 MOC_DIR = temp
 OBJECTS_DIR = temp
+UI_DIR = temp
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -22,6 +23,8 @@ SOURCES += \
 
 RESOURCES += ui/qml.qrc
 
+include(controller/controller.pri)
+
 TRANSLATIONS += \
     ui/trs/TSMS_zh_CN.ts
 
@@ -35,3 +38,4 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
