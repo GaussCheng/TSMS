@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>TSMS_zh_CN.qm</file>
+        <file>images/logo.png</file>
+        <file>Monitor.qml</file>
+        <file>MonitorForm.ui.qml</file>
+        <file>images/deploy.png</file>
+        <file>BatteryDescr.ui.qml</file>
+        <file>TemperatureTimeBarChart.qml</file>
+        <file>SafetyRateCurve.qml</file>
+        <file>ChargeCalcBarChart.qml</file>
+        <file>TemperatureDistribution.qml</file>
+        <file>TemperatureDistributionForm.ui.qml</file>
+        <file>BatteryGroupStatusFrame.qml</file>
+        <file>images/temperature_bar.png</file>
+        <file>TemperatureChangeRateCurve.qml</file>
+    </qresource>
+</RCC>
