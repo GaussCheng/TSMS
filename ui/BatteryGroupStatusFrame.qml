@@ -69,11 +69,13 @@ Rectangle {
 //                    color: parent.down ? "#d0d0d0" : "#e0e0e0"
                     color: parent.checked ? "gray":"#00000000"
                 }
-                ToolTip.visible: checked
-                ToolTip.text: {
-
+                ToolTip{
+                    id:tip
+                    visible: parent.checked
+                }
+                onCheckedChanged: {
                     var v = JSON.parse(model.display);
-                    return v.avgTemp;
+                    tip.text = v.avgTemp;
                 }
             }
         }
