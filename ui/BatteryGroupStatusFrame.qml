@@ -75,7 +75,9 @@ Rectangle {
                 }
                 onCheckedChanged: {
                     var v = JSON.parse(model.display);
-                    tip.text = v.avgTemp;
+                    tip.text = (Array(2).join("0") + (row + 1)).slice(-2) + "# " + qsTr("Bat Group") + " " +
+                            (Array(2).join("0") + (column + 1)).slice(-2) + "# " + qsTr("Bat Module") + ",\n" +
+                            v.avgTemp + "°C";
                 }
             }
         }
