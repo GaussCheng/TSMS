@@ -2,6 +2,8 @@
 #define BATTERYSTATUSTABLEMODEL_H
 
 #include <QAbstractTableModel>
+#include <QDebug>
+#include <QString>
 
 class BatteryStatusTableModel : public QAbstractTableModel
 {
@@ -18,11 +20,22 @@ public:
     void resizeTableData()
     {
         batteryStatusTable.clear();
-        batteryStatusTable.reserve(rCount());
-        for(int i = 0; i < batteryStatusTable.size(); ++i)
+        QVariantMap zero;
+        zero.insert("maxTemp", 0);
+        zero.insert("minTemp", 0);
+        zero.insert("avgTemp", 0);
+
+        for(int i = 0; i < rCount_; ++i)
         {
-            batteryStatusTable[i].reserve(cCount());
+//            batteryStatusTable[i].reserve(cCount());
+            QVariantList v;
+            for(int j = 0; j < cCount_; ++j)
+            {
+                v.push_back(zero);
+            }
+            batteryStatusTable.push_back(v);
         }
+//        qDebug()<<"size"<<batteryStatusTable.size();
         endResetModel();
     }
     int rCount() const { return rCount_;}
@@ -43,9 +56,19 @@ public:
 
     QVariant data(const QModelIndex &index, int role) const override
     {
+//        qDebug()<<"get data"<<role<<batteryStatusTable.size();
+        if(index.row() >=  batteryStatusTable.size()) return QVariant();
+        if(index.column() >= batteryStatusTable.at(index.row()).size()) return QVariant();
         switch (role) {
         case Qt::DisplayRole:
-            return batteryStatusTable.at(index.row()).at(index.column());
+        {
+            QVariantMap v = batteryStatusTable.at(index.row()).at(index.column()).toMap();
+
+            return QString("{\"maxTemp\":%1,\"minTemp\":%2,\"avgTemp\":%3}")
+                    .arg(v.value("maxTemp").toDouble())
+                    .arg(v.value("minTemp").toDouble())
+                    .arg(v.value("avgTemp").toDouble());
+        }
         default:
             break;
         }

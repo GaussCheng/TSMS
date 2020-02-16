@@ -1,4 +1,5 @@
 import QtQuick 2.12
+import QtQuick.Controls 2.3
 import BatteryStatusTableModel 1.0
 
 Rectangle {
@@ -27,33 +28,53 @@ Rectangle {
         anchors.left: rowTitles.right
         BatteryStatusTableModel{
             id: batteryStatusTableModel
-            rCount: 1
-            cCount: 1
-            onRCountChanged: {
-                console.log("run")
-            }
         }
         color: "#FFFFFF"
         width: batteryTable.width
         height: batteryTable.height
         TableView{
             id: batteryTable
-            property double batteryStatusWidth: (container.width - rowTitles.width -  2 * colCount) / colCount
-            property double batteryStatusHeight: (container.height - colTitles.height -  2 * rowCount) / rowCount
+            property double batteryStatusWidth: (container.width - rowTitles.width -  rowSpacing * colCount) / colCount
+            property double batteryStatusHeight: (container.height - colTitles.height -  columnSpacing * rowCount) / rowCount
             model: batteryStatusTableModel
-            width: batteryStatusWidth * colCount + 2 * colCount
-            height: batteryStatusHeight * rowCount + 2 * rowCount
-            x:1
-            y:1
-            rowSpacing: 2
-            columnSpacing: 2
+            width: batteryStatusWidth * colCount + rowSpacing * colCount
+            height: batteryStatusHeight * rowCount + columnSpacing * rowCount
+//            x:1
+//            y:1
+            rowSpacing: 0
+            columnSpacing: 0
             contentWidth: parent.width
             contentHeight: parent.height
             reuseItems: false
-            delegate: Rectangle{
+            delegate: Button{
                 implicitWidth: batteryTable.batteryStatusWidth
                 implicitHeight: batteryTable.batteryStatusHeight
-                color: "red"
+                checkable: true
+                autoExclusive: true
+//                palette.button:"red"
+//                palette.dark:"yellow"
+
+                leftPadding: 2
+                rightPadding:2
+                topPadding:2
+                bottomPadding:2
+                contentItem:Rectangle{
+                    color: "red"
+                }
+
+                background: Rectangle{
+                    implicitWidth: parent.implicitWidth
+                    implicitHeight: parent.implicitHeight
+//                    opacity: enabled ? 1 : 0.3
+//                    color: parent.down ? "#d0d0d0" : "#e0e0e0"
+                    color: parent.checked ? "gray":"#00000000"
+                }
+                ToolTip.visible: checked
+                ToolTip.text: {
+
+                    var v = JSON.parse(model.display);
+                    return v.avgTemp;
+                }
             }
         }
     }

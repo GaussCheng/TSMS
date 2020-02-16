@@ -26,6 +26,7 @@ Rectangle {
     ComboBox {
         id: batteryTypeSel
         x: 156
+        height: 32
         anchors.top: parent.top
         anchors.topMargin: 9
         anchors.right: batteryGroupStatusFrame.right
@@ -37,6 +38,7 @@ Rectangle {
         id: batteryGroupIndex
         x: 754
         y: 9
+        height: batteryTypeSel.height
         property string batteryGroupIndexItemName: qsTr("Battery Module")
         anchors.right: parent.right
         anchors.rightMargin: 6
@@ -144,11 +146,37 @@ Rectangle {
         anchors.right: parent.right
         anchors.rightMargin: 6
     }
+
+    Label {
+        id: label4
+        x: 424
+        height: batteryTypeSel.height
+        color: "#ffffff"
+        text: qsTr("Battery Type")
+        anchors.right: batteryTypeSel.left
+        anchors.rightMargin: 6
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: batteryTypeSel.top
+        anchors.topMargin: 0
+    }
+
+    Label {
+        id: label5
+        x: 706
+        height: batteryTypeSel.height
+        color: "#ffffff"
+        text: qsTr("Battery Module")
+        anchors.right: batteryGroupIndex.left
+        anchors.rightMargin: 6
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: batteryGroupIndex.top
+        anchors.topMargin: 0
+    }
 }
 
 /*##^##
 Designer {
-    D{i:2;anchors_y:9}
+    D{i:2;anchors_y:9}D{i:16;anchors_y:21}D{i:17;anchors_y:21}
 }
 ##^##*/
 

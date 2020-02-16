@@ -2,5 +2,4 @@
 
 BatteryStatusTableModel::BatteryStatusTableModel()
 {
-
 }
