@@ -3,19 +3,20 @@ import QtQuick.Controls 2.5
 import QtQuick.VirtualKeyboard 2.4
 //import QtQuick.Window 2.2
 import QtQuick.Layouts 1.3
+import Theme 1.0
 
 
-Item {
+ApplicationWindow {
     id: window
     visible: true
     width: 1024
     height: 768
-
+    title: qsTr("TSMS")
     Rectangle{
         id:header
         width: parent.width
         height: 48
-        color: "#1D69C5"
+        color: Theme.headerColor
         Image {
             id: logo
             source: "images/logo.png"
@@ -26,7 +27,7 @@ Item {
         Label{
             text: qsTr("TSMS")
             font.pointSize: 24
-            color: "white"
+            color: Theme.mainTextColor
             anchors.left: logo.right
             anchors.leftMargin: 4
             anchors.verticalCenter: parent.verticalCenter
@@ -34,7 +35,7 @@ Item {
         Label{
             id:timeShowLabel
             font.pointSize: 12
-            color: "white"
+            color: Theme.mainTextColor
             anchors.right: parent.right
             anchors.rightMargin: 4
             anchors.verticalCenter: parent.verticalCenter
@@ -54,7 +55,7 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
             font.pointSize: 16
-            color: "#FFFFFF"
+            color: Theme.mainTextColor
             text: stackView.children[stackView.currentIndex].pageTitle
         }
     }
@@ -62,7 +63,7 @@ Item {
         id: headerSplitLine
         height: 1
         width: parent.width
-        color: "gray"
+        color: Theme.splitLineColor
         anchors.top: header.bottom
     }
 
@@ -71,7 +72,7 @@ Item {
         height: parent.height - header.height
         anchors.top: headerSplitLine.bottom
         width: 96
-        color: "#0E257A"
+        color: Theme.menuBarColor
         ColumnLayout{
             property int btnFontSize: 10
             property int btnWidth: 64
@@ -119,6 +120,7 @@ Item {
                 autoExclusive: true
                 checkable: true
 
+
             }
             Button{
                 id: dataQueryBtn
@@ -129,6 +131,10 @@ Item {
                 implicitHeight:parent.btnHeight
                 autoExclusive: true
                 checkable: true
+                onCheckedChanged: {
+                    if(checked)
+                        stackView.currentIndex = 3;
+                }
 
             }
             Button{
@@ -146,7 +152,7 @@ Item {
     }
     Rectangle{
         id: menuBarSplitLine
-        color: "gray"
+        color: Theme.splitLineColor
         width: 1
         height: subPageContainer.height
         anchors.left: menuContainer.right
@@ -159,7 +165,7 @@ Item {
         anchors.top: menuContainer.top
         width: parent.width - menuContainer.width
         height: parent.height - header.height
-        color: "#030F48"
+        color: Theme.mainColor
 
 
 
@@ -177,6 +183,19 @@ Item {
                 width: stackView.width
                 height: stackView.height
                 property string pageTitle: qsTr("Temp Distr")
+            }
+            Rectangle{
+                id: securityAna
+                width: stackView.width
+                height: stackView.height
+                property string pageTitle: qsTr("Security Ana")
+            }
+
+            DataQuery{
+                id:dataQuery
+                width: stackView.width
+                height: stackView.height
+                property string pageTitle: qsTr("Data Query")
             }
         }
     }

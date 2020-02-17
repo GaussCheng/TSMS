@@ -16,5 +16,13 @@
         <file>BatteryGroupStatusFrame.qml</file>
         <file>images/temperature_bar.png</file>
         <file>TemperatureChangeRateCurve.qml</file>
+        <file>DataQuery.qml</file>
+        <file>DataQueryForm.ui.qml</file>
+        <file>DateTimeEdit.qml</file>
+        <file>imports/Theme/Theme.qml</file>
+        <file>imports/Theme/qmldir</file>
+        <file>StatusLabel.ui.qml</file>
+        <file>images/ic_calendar_today_black_18dp.png</file>
+        <file>images/ic_clear_black_18dp.png</file>
     </qresource>
 </RCC>

@@ -1,5 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.3
+import Theme 1.0
 import BatteryStatusTableModel 1.0
 
 Rectangle {
@@ -14,7 +15,7 @@ Rectangle {
             model: rowCount
             id:content
             Text {
-                color: "#FFFFFF"
+                color: Theme.mainTextColor
                 height: batteryTable.batteryStatusHeight
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignRight

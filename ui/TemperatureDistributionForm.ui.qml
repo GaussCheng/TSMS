@@ -1,6 +1,7 @@
 import QtQuick 2.4
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
+import Theme 1.0
 
 Rectangle {
     id: container
@@ -26,12 +27,24 @@ Rectangle {
     ComboBox {
         id: batteryTypeSel
         x: 156
-        height: 32
+        height: 40
         anchors.top: parent.top
         anchors.topMargin: 9
         anchors.right: batteryGroupStatusFrame.right
         anchors.rightMargin: 0
         model: [qsTr("Lithium iron"), qsTr("Tri-battery")]
+
+        Label {
+            id: label4
+            x: -83
+            y: 21
+            color: Theme.mainTextColor
+            text: qsTr("Battery Type")
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: batteryTypeSel.left
+            anchors.rightMargin: 6
+            verticalAlignment: Text.AlignVCenter
+        }
     }
 
     ComboBox {
@@ -45,6 +58,18 @@ Rectangle {
         model: [["#01" + batteryGroupIndexItemName, "#02" + batteryGroupIndexItemName, "#03" + batteryGroupIndexItemName, "#04" + batteryGroupIndexItemName, "#05"
                  + batteryGroupIndexItemName, "#06" + batteryGroupIndexItemName, "#07" + batteryGroupIndexItemName, "#08" + batteryGroupIndexItemName, "#09"
                  + batteryGroupIndexItemName, "#10" + batteryGroupIndexItemName, "#11" + batteryGroupIndexItemName, "#12" + batteryGroupIndexItemName], ["#01" + batteryGroupIndexItemName, "#02" + batteryGroupIndexItemName, "#03" + batteryGroupIndexItemName, "#04" + batteryGroupIndexItemName, "#05" + batteryGroupIndexItemName, "#06" + batteryGroupIndexItemName, "#07" + batteryGroupIndexItemName, "#08" + batteryGroupIndexItemName, "#09" + batteryGroupIndexItemName, "#10" + batteryGroupIndexItemName, "#11" + batteryGroupIndexItemName, "#12" + batteryGroupIndexItemName, , "#13" + batteryGroupIndexItemName, , "#14" + batteryGroupIndexItemName, , "#15" + batteryGroupIndexItemName, , "#16" + batteryGroupIndexItemName]][batteryTypeSel.currentIndex]
+
+        Label {
+            id: label5
+            x: -98
+            y: 21
+            color: Theme.mainTextColor
+            text: qsTr("Battery Module")
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: batteryGroupIndex.left
+            anchors.rightMargin: 6
+            verticalAlignment: Text.AlignVCenter
+        }
     }
 
     Label {
@@ -73,67 +98,50 @@ Rectangle {
 
         Label {
             id: label1
-            color: "#ffffff"
+            color: Theme.mainTextColor
             text: qsTr("Max Temp")
         }
 
-        Label {
+        StatusLabel {
             id: maxTemp
             x: 450
             y: 235
             width: 51
             height: 16
-            color: "#a2c8e5"
-            text: qsTr("28.97°C")
-
-            styleColor: "#194584"
-            horizontalAlignment: Text.AlignRight
-            background: Rectangle {
-                color: "#194584"
-            }
+            statusText: "28.97"
+            unit: qsTr("°C")
         }
 
         Label {
             id: label2
-            color: "#ffffff"
+            color: Theme.mainTextColor
             text: qsTr("Min Temp")
         }
 
-        Label {
+        StatusLabel {
             id: minTemp
             x: 450
             y: 235
             width: 51
             height: 16
-            color: "#a2c8e5"
-            text: qsTr("20.97°C")
-
-            styleColor: "#194584"
-            horizontalAlignment: Text.AlignRight
-            background: Rectangle {
-                color: "#194584"
-            }
+            statusText: "20.97"
+            unit: qsTr("°C")
         }
 
         Label {
             id: label3
-            color: "#ffffff"
+            color: Theme.mainTextColor
             text: qsTr("Avg Temp")
         }
 
-        Label {
+        StatusLabel {
             id: avgTemp
             x: 450
             y: 235
             width: 51
             height: 16
-            color: "#a2c8e5"
-            text: qsTr("23.99°C")
-            styleColor: "#194584"
-            horizontalAlignment: Text.AlignRight
-            background: Rectangle {
-                color: "#194584"
-            }
+            statusText: "23.99"
+            unit: qsTr("°C")
         }
     }
 
@@ -146,37 +154,11 @@ Rectangle {
         anchors.right: parent.right
         anchors.rightMargin: 6
     }
-
-    Label {
-        id: label4
-        x: 424
-        height: batteryTypeSel.height
-        color: "#ffffff"
-        text: qsTr("Battery Type")
-        anchors.right: batteryTypeSel.left
-        anchors.rightMargin: 6
-        verticalAlignment: Text.AlignVCenter
-        anchors.top: batteryTypeSel.top
-        anchors.topMargin: 0
-    }
-
-    Label {
-        id: label5
-        x: 706
-        height: batteryTypeSel.height
-        color: "#ffffff"
-        text: qsTr("Battery Module")
-        anchors.right: batteryGroupIndex.left
-        anchors.rightMargin: 6
-        verticalAlignment: Text.AlignVCenter
-        anchors.top: batteryGroupIndex.top
-        anchors.topMargin: 0
-    }
 }
 
 /*##^##
 Designer {
-    D{i:2;anchors_y:9}D{i:16;anchors_y:21}D{i:17;anchors_y:21}
+    D{i:3;anchors_y:21}D{i:2;anchors_y:9}D{i:5;anchors_y:21}D{i:4;invisible:true}
 }
 ##^##*/
 

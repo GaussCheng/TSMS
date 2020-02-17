@@ -1,6 +1,7 @@
 import QtQuick 2.4
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
+import Theme 1.0
 
 Item {
     id: batteryDescr
@@ -21,7 +22,7 @@ Item {
         height: 11
         color: "#00000000"
         anchors.horizontalCenter: parent.horizontalCenter
-        border.color: "#ffffff"
+        border.color: Theme.mainTextColor
     }
 
     Rectangle {
@@ -36,7 +37,7 @@ Item {
         anchors.bottomMargin: 0
         anchors.top: rectangle1.bottom
         anchors.topMargin: -1
-        border.color: "#ffffff"
+        border.color: Theme.mainTextColor
 
         Rectangle {
             id: p1
@@ -121,7 +122,7 @@ Item {
     Label {
         id: percentLabel
         width: 42
-        color: "#ffffff"
+        color: Theme.mainTextColor
         text: percent.toFixed(2)
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: rectangle2.right
@@ -130,7 +131,7 @@ Item {
         Label {
             id: label
             y: 0
-            color: "#ffffff"
+            color: Theme.mainTextColor
             text: qsTr("%")
             anchors.left: parent.right
             anchors.leftMargin: 0
@@ -139,7 +140,7 @@ Item {
 
     Label {
         id: label1
-        color: "#ffffff"
+        color: Theme.mainTextColor
         text: qsTr("SOC")
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 16
@@ -149,7 +150,7 @@ Item {
 
     Label {
         id: title
-        color: "#ffffff"
+        color: Theme.mainTextColor
         text: qsTr("type")
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.bottom

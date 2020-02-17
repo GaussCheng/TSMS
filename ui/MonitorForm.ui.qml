@@ -2,12 +2,12 @@ import QtQuick 2.4
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
 import QtQuick.Templates 2.5
+import Theme 1.0
 
-Rectangle {
+Frame {
     id: container
     width: 900
     height: 740
-    color: "#030f48"
     property alias elementHeight: container.height
     property alias elementWidth: container.width
 
@@ -16,7 +16,7 @@ Rectangle {
         y: 0
         width: 1
         height: container.height
-        color: "gray"
+        color: Theme.splitLineColor
         anchors.left: monitorTreeContainer.right
         anchors.leftMargin: 0
     }
@@ -37,7 +37,7 @@ Rectangle {
             x: 0
             y: 0
             height: 24
-            color: "#ffffff"
+            color: Theme.mainTextColor
             text: qsTr("Battery Status")
             verticalAlignment: Text.AlignVCenter
             anchors.right: parent.right
@@ -45,7 +45,7 @@ Rectangle {
             anchors.left: parent.left
             anchors.leftMargin: 0
             background: Rectangle {
-                color: "#194584"
+                color: Theme.groupBoxTitleBG
             }
         }
 
@@ -65,60 +65,49 @@ Rectangle {
                 id: label5
                 width: 97
                 height: 16
-                color: "#ffffff"
+                color: Theme.mainTextColor
                 text: qsTr("Current Status")
             }
 
-            Label {
+            StatusLabel {
                 id: currentBatteryStatus
                 width: 50
                 height: 16
-                color: "#a2c8e5"
-                text: qsTr("OFF")
+                statusText: qsTr("OFF")
                 Layout.minimumWidth: 50
-                styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
-                padding: 0
-                background: Rectangle {
-                    color: "#194584"
-                }
             }
 
             Label {
                 id: label8
                 width: 97
                 height: 16
-                color: "#ffffff"
+                color: Theme.mainTextColor
             }
 
             Label {
                 id: label6
                 width: 97
                 height: 16
-                color: "#ffffff"
+                color: Theme.mainTextColor
                 text: qsTr("Calc Charge")
             }
 
-            Label {
+            StatusLabel {
                 id: calcCharge
                 width: 50
                 height: 16
-                color: "#a2c8e5"
-                text: qsTr("1.3")
+                statusText: "1.3"
                 Layout.minimumWidth: 50
-                styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
                 padding: 0
-                background: Rectangle {
-                    color: "#194584"
-                }
             }
 
             Label {
                 id: label7
                 width: 97
                 height: 16
-                color: "#ffffff"
+                color: Theme.mainTextColor
                 text: qsTr("10kWh")
             }
 
@@ -126,30 +115,24 @@ Rectangle {
                 id: label9
                 width: 97
                 height: 16
-                color: "#ffffff"
+                color: Theme.mainTextColor
                 text: qsTr("Calc discharge")
             }
 
-            Label {
-                id: calcCharge1
+            StatusLabel {
+                id: calcDischarge
                 width: 50
                 height: 16
-                color: "#a2c8e5"
-                text: qsTr("1.3")
+                statusText: "1.3"
                 Layout.minimumWidth: 50
-                styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
-                padding: 0
-                background: Rectangle {
-                    color: "#194584"
-                }
             }
 
             Label {
                 id: label10
                 width: 97
                 height: 16
-                color: "#ffffff"
+                color: Theme.mainTextColor
                 text: qsTr("10kWh")
             }
         }
@@ -185,7 +168,7 @@ Rectangle {
             x: 0
             y: 0
             height: 24
-            color: "#ffffff"
+            color: Theme.mainTextColor
             text: qsTr("Battery Charge Curve")
             anchors.leftMargin: 0
             anchors.rightMargin: 0
@@ -193,7 +176,7 @@ Rectangle {
             anchors.left: parent.left
             verticalAlignment: Text.AlignVCenter
             background: Rectangle {
-                color: "#194584"
+                color: Theme.groupBoxTitleBG
             }
         }
 
@@ -241,7 +224,7 @@ Rectangle {
                 y: 184
                 width: 46
                 height: 16
-                color: "#ffffff"
+                color: Theme.mainTextColor
                 text: qsTr("H₂")
                 anchors.left: gasConcH2.right
                 anchors.leftMargin: 6
@@ -253,99 +236,74 @@ Rectangle {
                 y: 162
                 width: 46
                 height: 16
-                color: "#ffffff"
+                color: Theme.mainTextColor
                 text: qsTr("CO")
                 anchors.left: gasConcCo.right
                 anchors.leftMargin: 6
             }
 
-            Label {
+            StatusLabel {
                 id: coolSystem
                 x: 450
                 y: 309
                 width: 51
                 height: 16
-                color: "#f12424"
-                text: qsTr("ON")
+                statusText: qsTr("ON")
+                color: "red"
                 anchors.left: maxTemp.left
                 anchors.leftMargin: 0
-                styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
-                padding: 0
-                renderType: Text.QtRendering
-                background: Rectangle {
-                    color: "#194584"
-                }
             }
 
-            Label {
+            StatusLabel {
                 id: ffSystem
                 x: 450
                 y: 272
                 width: 51
                 height: 16
-                color: "#a2c8e5"
-                text: qsTr("OFF")
+                statusText: qsTr("OFF")
                 anchors.left: maxTemp.left
                 anchors.leftMargin: 0
-                styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
-                padding: 0
-                renderType: Text.QtRendering
-                background: Rectangle {
-                    color: "#194584"
-                }
             }
 
-            Label {
+            StatusLabel {
                 id: smokeConc
                 x: 450
                 y: 235
                 width: 51
                 height: 16
-                color: "#a2c8e5"
-                text: qsTr("800PPM")
+                statusText: "800"
+                unit: "PPM"
                 anchors.left: maxTemp.left
                 anchors.leftMargin: 0
-                styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
-                background: Rectangle {
-                    color: "#194584"
-                }
             }
 
-            Label {
+            StatusLabel {
                 id: gasConcH2
                 x: 450
                 y: 183
                 width: 51
                 height: 16
-                color: "#a2c8e5"
-                text: qsTr("80PPm")
+                unit: qsTr("PPM")
+                statusText: "80"
                 anchors.left: maxTemp.left
                 anchors.leftMargin: 0
-                styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
-                background: Rectangle {
-                    color: "#194584"
-                }
             }
 
-            Label {
+            StatusLabel {
                 id: gasConcCo
                 x: 450
                 y: 162
                 width: 51
                 height: 16
-                color: "#a2c8e5"
-                text: qsTr("55PPm")
+                unit: qsTr("PPM")
+                statusText: "55"
                 anchors.left: maxTemp.left
                 anchors.leftMargin: 0
-                styleColor: "#194584"
                 horizontalAlignment: Text.AlignRight
-                background: Rectangle {
-                    color: "#194584"
-                }
             }
 
             Label {
@@ -370,21 +328,15 @@ Rectangle {
                 anchors.leftMargin: -8
             }
 
-            Label {
+            StatusLabel {
                 id: maxTemp
-                x: 450
                 y: 113
                 width: 51
                 height: 16
-                color: "#a2c8e5"
-                text: qsTr("25°C")
+                unit: qsTr("°C")
                 anchors.left: label2.right
-                anchors.leftMargin: 0
-                horizontalAlignment: Text.AlignRight
-                styleColor: "#194584"
-                background: Rectangle {
-                    color: "#194584"
-                }
+                anchors.leftMargin: 2
+                statusText: "25"
             }
 
             Label {
@@ -455,10 +407,11 @@ Rectangle {
 /*##^##
 Designer {
     D{i:1;anchors_x:625}D{i:5;anchors_x:23;anchors_y:4}D{i:2;anchors_height:200;anchors_width:200;anchors_x:645;anchors_y:0}
-D{i:23;anchors_x:2;anchors_y:2}D{i:20;anchors_height:200;anchors_width:200;anchors_x:645;anchors_y:8}
-D{i:38;anchors_x:369}D{i:39;anchors_x:369}D{i:42;anchors_x:369}D{i:43;anchors_x:369}
-D{i:44;anchors_x:369}D{i:25;anchors_x:8;anchors_y:8}D{i:47;anchors_x:56;anchors_y:224}
-D{i:45;anchors_height:200;anchors_y:373}
+D{i:20;anchors_height:200;anchors_width:200;anchors_x:645;anchors_y:8}D{i:17;anchors_height:200;anchors_width:200;anchors_x:645;anchors_y:8}
+D{i:23;anchors_x:2;anchors_y:2}D{i:25;anchors_x:8;anchors_y:8}D{i:30;anchors_x:369}
+D{i:31;anchors_x:369}D{i:33;anchors_x:369}D{i:34;anchors_x:369}D{i:35;anchors_x:369}
+D{i:22;anchors_x:8;anchors_y:8}D{i:37;anchors_height:200;anchors_x:369;anchors_y:373}
+D{i:38;anchors_x:56;anchors_y:224}D{i:36;anchors_height:200;anchors_x:369;anchors_y:373}
 }
 ##^##*/
 
