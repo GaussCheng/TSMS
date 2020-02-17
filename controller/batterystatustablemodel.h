@@ -16,8 +16,7 @@ signals:
 public:
     BatteryStatusTableModel();
 
-
-    void resizeTableData()
+    Q_INVOKABLE void resizeTableData()
     {
         batteryStatusTable.clear();
         QVariantMap zero;

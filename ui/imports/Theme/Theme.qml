@@ -11,6 +11,7 @@ QtObject {
     readonly property color mainColor: "#030F48"
     readonly property color headerColor: "#1D69C5"
     readonly property color menuBarColor: "#0E257A"
+    readonly property color infoColor: "#f9d24b"
     readonly property color splitLineColor: "#EEEEEE"
     readonly property color errorColor: "#c0392b"
     readonly property color warningColor: "orange"

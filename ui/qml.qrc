@@ -24,5 +24,6 @@
         <file>StatusLabel.ui.qml</file>
         <file>images/ic_calendar_today_black_18dp.png</file>
         <file>images/ic_clear_black_18dp.png</file>
+        <file>BatteryModuleSafeBarChart.qml</file>
     </qresource>
 </RCC>

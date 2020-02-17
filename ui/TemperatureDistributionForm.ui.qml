@@ -78,11 +78,11 @@ Rectangle {
         y: 136
         width: 167
         height: 16
+        color: Theme.infoColor
         text: qsTr("Battery Module Information")
         anchors.right: parent.right
         anchors.rightMargin: 6
         horizontalAlignment: Text.AlignRight
-        color: "#F9D24B"
     }
 
     GridLayout {

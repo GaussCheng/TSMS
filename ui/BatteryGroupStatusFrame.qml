@@ -1,16 +1,22 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.3
 import Theme 1.0
+import QtQuick.Controls.Material 2.12
 import BatteryStatusTableModel 1.0
 
 Rectangle {
     id:container
     property alias rowCount: batteryStatusTableModel.rCount
     property alias colCount: batteryStatusTableModel.cCount
+
+    function refresh()
+    {
+        batteryStatusTableModel.resizeTableData();
+    }
+
     color: "#00000000"
     Column{
         id: rowTitles
-        spacing: 2
         Repeater{
             model: rowCount
             id:content
@@ -48,6 +54,7 @@ Rectangle {
             contentHeight: parent.height
             reuseItems: false
             delegate: Button{
+                Material.theme: Material.System
                 implicitWidth: batteryTable.batteryStatusWidth
                 implicitHeight: batteryTable.batteryStatusHeight
                 checkable: true
@@ -89,7 +96,6 @@ Rectangle {
         anchors.top: batteryStatusGroup.bottom
         anchors.horizontalCenter: batteryStatusGroup.horizontalCenter
         anchors.left: batteryStatusGroup.left
-        spacing: 2
         Repeater{
             model: colCount
             Text {
