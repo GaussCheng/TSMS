@@ -402,6 +402,68 @@ Frame {
             anchors.leftMargin: 0
         }
     }
+
+    PathView {
+        id: pathView
+        x: 64
+        y: 157
+        width: 250
+        height: 130
+        delegate: Column {
+            spacing: 5
+            Rectangle {
+                width: 40
+                height: 40
+                color: colorCode
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Text {
+                x: 5
+                text: name
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.bold: true
+            }
+        }
+        path: Path {
+            startX: 120
+            PathQuad {
+                x: 120
+                y: 25
+                controlY: 75
+                controlX: 260
+            }
+
+            PathQuad {
+                x: 120
+                y: 100
+                controlY: 75
+                controlX: -20
+            }
+            startY: 100
+        }
+        model: ListModel {
+            ListElement {
+                name: "Grey"
+                colorCode: "grey"
+            }
+
+            ListElement {
+                name: "Red"
+                colorCode: "red"
+            }
+
+            ListElement {
+                name: "Blue"
+                colorCode: "blue"
+            }
+
+            ListElement {
+                name: "Green"
+                colorCode: "green"
+            }
+        }
+    }
 }
 
 /*##^##

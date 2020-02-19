@@ -119,7 +119,10 @@ ApplicationWindow {
                 implicitHeight:parent.btnHeight
                 autoExclusive: true
                 checkable: true
-
+                onCheckedChanged: {
+                    if(checked)
+                        stackView.currentIndex = 2;
+                }
 
             }
             Button{
@@ -146,6 +149,10 @@ ApplicationWindow {
                 implicitHeight:parent.btnHeight
                 autoExclusive: true
                 checkable: true
+                onCheckedChanged: {
+                    if(checked)
+                        stackView.currentIndex = 4;
+                }
 
             }
         }
@@ -184,7 +191,7 @@ ApplicationWindow {
                 height: stackView.height
                 property string pageTitle: qsTr("Temp Distr")
             }
-            Rectangle{
+            SecurityAnalysis{
                 id: securityAna
                 width: stackView.width
                 height: stackView.height
@@ -196,6 +203,13 @@ ApplicationWindow {
                 width: stackView.width
                 height: stackView.height
                 property string pageTitle: qsTr("Data Query")
+            }
+
+            AlarmInformation{
+                id:alarmInformation
+                width: stackView.width
+                height: stackView.height
+                property string pageTitle: qsTr("Alarm Information")
             }
         }
     }

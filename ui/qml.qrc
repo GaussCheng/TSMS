@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
-        <file>TSMS_zh_CN.qm</file>
         <file>images/logo.png</file>
         <file>Monitor.qml</file>
         <file>MonitorForm.ui.qml</file>
@@ -25,5 +24,14 @@
         <file>images/ic_calendar_today_black_18dp.png</file>
         <file>images/ic_clear_black_18dp.png</file>
         <file>BatteryModuleSafeBarChart.qml</file>
+        <file>AlarmInformation.qml</file>
+        <file>AlarmInformationForm.ui.qml</file>
+        <file>SecurityAnalysis.qml</file>
+        <file>SecurityAnalysisForm.ui.qml</file>
+        <file>SafetyFactorChangeCurve.qml</file>
+        <file>SafetyVoltageCurve.qml</file>
+        <file>IndividualSafetyFactor.qml</file>
+        <file>AlarmInfoTable.qml</file>
+        <file>MaximumTemperatureCurve.qml</file>
     </qresource>
 </RCC>
