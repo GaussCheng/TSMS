@@ -4,6 +4,7 @@ import QtQuick.VirtualKeyboard 2.4
 //import QtQuick.Window 2.2
 import QtQuick.Layouts 1.3
 import Theme 1.0
+import QtQuick.Controls.Material 2.12
 
 
 ApplicationWindow {
@@ -74,17 +75,21 @@ ApplicationWindow {
         width: 96
         color: Theme.menuBarColor
         ColumnLayout{
-            property int btnFontSize: 10
-            property int btnWidth: 64
-            property int btnHeight: 64
+            property int btnFontSize: 9
+            property int btnWidth: 80
+            property int btnHeight: 80
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: 24
             y : 24
 //            anchors.verticalCenter: parent.verticalCenter
             Button {
                 id: monitorBtn
+                icon.source: Theme.getThemeIcon("ic_dvr_black_36dp")
+                icon.width: 36
+                icon.height: 36
+                icon.color: checked? Material.color(Material.Teal):""
                 text: qsTr("Monitor")
-                font.pointSize: parent.btnFontSize
+//                font.pixelSize: parent.btnFontSize
                 display:AbstractButton.TextUnderIcon
                 implicitWidth: parent.btnWidth
                 implicitHeight:parent.btnHeight
@@ -98,8 +103,11 @@ ApplicationWindow {
             }
             Button{
                 id: temperaturBtn
-                text: qsTr("Temperature")
-                font.pointSize: parent.btnFontSize
+                text: qsTr("Temp Distr")
+                icon.source: Theme.getThemeIcon("ic_grain_black_36dp")
+                icon.width: 36
+                icon.height: 36
+                icon.color: checked? Material.color(Material.DeepOrange):""
                 display:AbstractButton.TextUnderIcon
                 implicitWidth: parent.btnWidth
                 implicitHeight:parent.btnHeight
@@ -113,19 +121,23 @@ ApplicationWindow {
             Button{
                 id: securityAnaBtn
                 text: qsTr("Security Ana")
-                font.pointSize: parent.btnFontSize
+                icon.source: Theme.getThemeIcon("ic_security_black_36dp")
+                icon.width: 36
+                icon.height: 36
+                icon.color: checked? Material.color(Material.Cyan):""
                 display:AbstractButton.TextUnderIcon
                 implicitWidth: parent.btnWidth
                 implicitHeight:parent.btnHeight
                 autoExclusive: true
                 checkable: true
-
-
             }
             Button{
                 id: dataQueryBtn
                 text: qsTr("Data Query")
-                font.pointSize: parent.btnFontSize
+                icon.source: Theme.getThemeIcon("ic_youtube_searched_for_black_36dp")
+                icon.width: 36
+                icon.height: 36
+                icon.color: checked? Material.color(Material.Green):""
                 display:AbstractButton.TextUnderIcon
                 implicitWidth: parent.btnWidth
                 implicitHeight:parent.btnHeight
@@ -140,13 +152,15 @@ ApplicationWindow {
             Button{
                 id: alarmBtn
                 text: qsTr("Alarm")
-                font.pointSize: parent.btnFontSize
+                icon.source: Theme.getThemeIcon("ic_warning_black_36dp")
+                icon.width: 36
+                icon.height: 36
+                icon.color: checked? Material.color(Material.Red):""
                 display:AbstractButton.TextUnderIcon
                 implicitWidth: parent.btnWidth
                 implicitHeight:parent.btnHeight
                 autoExclusive: true
                 checkable: true
-
             }
         }
     }

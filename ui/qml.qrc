@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
-        <file>TSMS_zh_CN.qm</file>
         <file>images/logo.png</file>
         <file>Monitor.qml</file>
         <file>MonitorForm.ui.qml</file>
@@ -22,8 +21,13 @@
         <file>imports/Theme/Theme.qml</file>
         <file>imports/Theme/qmldir</file>
         <file>StatusLabel.ui.qml</file>
-        <file>images/ic_calendar_today_black_18dp.png</file>
-        <file>images/ic_clear_black_18dp.png</file>
         <file>BatteryModuleSafeBarChart.qml</file>
+        <file>trs/TSMS_zh_CN.qm</file>
+        <file>images/ic_dvr_black_36dp.png</file>
+        <file>images/ic_grain_black_36dp.png</file>
+        <file>images/ic_security_black_36dp.png</file>
+        <file>images/ic_youtube_searched_for_black_36dp.png</file>
+        <file>images/ic_warning_black_36dp.png</file>
+        <file>images/appicon.png</file>
     </qresource>
 </RCC>

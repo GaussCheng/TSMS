@@ -14,8 +14,9 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QApplication app(argc, argv);
+    app.setWindowIcon(QIcon(":images/appicon.png"));
     QTranslator tr;
-    tr.load("qrc:/TSMS_zh_CN.qm");
+    tr.load(":/trs/TSMS_zh_CN.qm");
     app.installTranslator(&tr);
     qmlRegisterType<BatteryStatusTableModel>("BatteryStatusTableModel", 1, 0, "BatteryStatusTableModel");
 
