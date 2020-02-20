@@ -2,6 +2,123 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN" sourcelanguage="en">
 <context>
+    <name>AlarmInfoTable</name>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="104"/>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="109"/>
+        <source>Battery Material</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="114"/>
+        <source>Battery Module</source>
+        <translation type="unfinished">电池蔟</translation>
+    </message>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="119"/>
+        <source>Battery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="124"/>
+        <source>Battery Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="129"/>
+        <source>Downtime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="134"/>
+        <source>Fault type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="139"/>
+        <source>Duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="211"/>
+        <source>共8页，第1页</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="217"/>
+        <source>Last</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInfoTable.qml" line="223"/>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AlarmInformationForm.ui</name>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="26"/>
+        <source>Battery Type</source>
+        <translation type="unfinished">电池材料</translation>
+    </message>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="34"/>
+        <source>Lithium iron</source>
+        <translation type="unfinished">磷酸铁锂</translation>
+    </message>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="34"/>
+        <source>Tri-battery</source>
+        <translation type="unfinished">三元电池</translation>
+    </message>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="42"/>
+        <location filename="../AlarmInformationForm.ui.qml" line="50"/>
+        <source>Battery Module</source>
+        <translation type="unfinished">电池蔟</translation>
+    </message>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="62"/>
+        <source>Battery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="78"/>
+        <source>Alarm History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="86"/>
+        <source>Last Day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="86"/>
+        <source>Past Week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="86"/>
+        <source>Last Month</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="86"/>
+        <source>Last Year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AlarmInformationForm.ui.qml" line="91"/>
+        <source>Find</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BatteryDescr.ui</name>
     <message>
         <location filename="../BatteryDescr.ui.qml" line="135"/>
@@ -129,6 +246,23 @@
     </message>
 </context>
 <context>
+    <name>IndividualSafetyFactor</name>
+    <message>
+        <location filename="../IndividualSafetyFactor.qml" line="13"/>
+        <source>Module Safety Factor Change(a/min)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MaximumTemperatureCurve</name>
+    <message>
+        <location filename="../MaximumTemperatureCurve.qml" line="13"/>
+        <location filename="../MaximumTemperatureCurve.qml" line="29"/>
+        <source>Maximum Temperature Curve(T/min)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MonitorForm.ui</name>
     <message>
         <location filename="../MonitorForm.ui.qml" line="41"/>
@@ -231,6 +365,19 @@
     </message>
 </context>
 <context>
+    <name>SafetyFactorChangeCurve</name>
+    <message>
+        <location filename="../SafetyFactorChangeCurve.qml" line="13"/>
+        <source>Module Safety Factor Change(a/min)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../SafetyFactorChangeCurve.qml" line="29"/>
+        <source>Voltage Curve(a/min)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SafetyRateCurve</name>
     <message>
         <location filename="../SafetyRateCurve.qml" line="13"/>
@@ -246,6 +393,44 @@
         <location filename="../SafetyRateCurve.qml" line="72"/>
         <source>Tri-battery</source>
         <translation>三元电池</translation>
+    </message>
+</context>
+<context>
+    <name>SafetyVoltageCurve</name>
+    <message>
+        <location filename="../SafetyVoltageCurve.qml" line="13"/>
+        <location filename="../SafetyVoltageCurve.qml" line="29"/>
+        <source>Voltage Curve(v/min)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SecurityAnalysisForm.ui</name>
+    <message>
+        <location filename="../SecurityAnalysisForm.ui.qml" line="24"/>
+        <source>Battery Type</source>
+        <translation type="unfinished">电池材料</translation>
+    </message>
+    <message>
+        <location filename="../SecurityAnalysisForm.ui.qml" line="32"/>
+        <source>Lithium iron</source>
+        <translation type="unfinished">磷酸铁锂</translation>
+    </message>
+    <message>
+        <location filename="../SecurityAnalysisForm.ui.qml" line="32"/>
+        <source>Tri-battery</source>
+        <translation type="unfinished">三元电池</translation>
+    </message>
+    <message>
+        <location filename="../SecurityAnalysisForm.ui.qml" line="40"/>
+        <location filename="../SecurityAnalysisForm.ui.qml" line="47"/>
+        <source>Battery Module</source>
+        <translation type="unfinished">电池蔟</translation>
+    </message>
+    <message>
+        <location filename="../SecurityAnalysisForm.ui.qml" line="58"/>
+        <source>Battery</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -334,7 +519,7 @@
     <name>main</name>
     <message>
         <location filename="../main.qml" line="91"/>
-        <location filename="../main.qml" line="193"/>
+        <location filename="../main.qml" line="202"/>
         <source>Monitor</source>
         <translation>监视</translation>
     </message>
@@ -350,26 +535,31 @@
     </message>
     <message>
         <location filename="../main.qml" line="106"/>
-        <location filename="../main.qml" line="199"/>
+        <location filename="../main.qml" line="208"/>
         <source>Temp Distr</source>
         <translation>温度分布</translation>
     </message>
     <message>
         <location filename="../main.qml" line="123"/>
-        <location filename="../main.qml" line="205"/>
+        <location filename="../main.qml" line="214"/>
         <source>Security Ana</source>
         <translation>安全分析</translation>
     </message>
     <message>
-        <location filename="../main.qml" line="136"/>
-        <location filename="../main.qml" line="212"/>
+        <location filename="../main.qml" line="141"/>
+        <location filename="../main.qml" line="221"/>
         <source>Data Query</source>
         <translation>数据查询</translation>
     </message>
     <message>
-        <location filename="../main.qml" line="154"/>
+        <location filename="../main.qml" line="159"/>
         <source>Alarm</source>
         <translation>告警信息</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="228"/>
+        <source>Alarm Information</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -22,6 +22,13 @@
         <file>imports/Theme/qmldir</file>
         <file>StatusLabel.ui.qml</file>
         <file>BatteryModuleSafeBarChart.qml</file>
+        <file>AlarmInformation.qml</file>
+        <file>AlarmInformationForm.ui.qml</file>
+        <file>SecurityAnalysis.qml</file>
+        <file>SecurityAnalysisForm.ui.qml</file>
+        <file>SafetyFactorChangeCurve.qml</file>
+        <file>SafetyVoltageCurve.qml</file>
+        <file>IndividualSafetyFactor.qml</file>
         <file>trs/TSMS_zh_CN.qm</file>
         <file>images/ic_dvr_black_36dp.png</file>
         <file>images/ic_grain_black_36dp.png</file>
@@ -29,5 +36,7 @@
         <file>images/ic_youtube_searched_for_black_36dp.png</file>
         <file>images/ic_warning_black_36dp.png</file>
         <file>images/appicon.png</file>
+        <file>AlarmInfoTable.qml</file>
+        <file>MaximumTemperatureCurve.qml</file>
     </qresource>
 </RCC>
